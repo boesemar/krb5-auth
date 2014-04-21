@@ -13,15 +13,18 @@ $ gem install -l *.gem
 
 
 Example:
+-------------
 
-  require 'krb5_auth'
-  => true
-  
-  auth.get_default_realm
-  => "AO.AFRISP.NET"
+    require 'krb5_auth'
+    => true
+    
+    auth.get_default_realm
+    => "AO.AFRISP.NET"
+    
+    auth.get_init_creds_password('martin.boese', 'password123')
+    => true
+    
+    auth.get_init_creds_password('martin.boese', 'bad pass')
+    Krb5Auth::Krb5::Exception: Decrypt integrity check failed
 
-  auth.get_init_creds_password('martin.boese', 'password123')
-  => true
-  
-  auth.get_init_creds_password('martin.boese', 'bad pass')
-  Krb5Auth::Krb5::Exception: Decrypt integrity check failed
+
